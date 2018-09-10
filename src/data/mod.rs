@@ -9,7 +9,7 @@ impl Parent{
     pub fn get_name(&self) -> String{
         let blank = String::from("");
         let name = format!("{}{}{}", self.fname, match self.mname{
-                Some(ref x) => format!(" {} ", x),
+                Some(ref x) => &format!(" {} ", x),
                 None => &blank,
             }, self.lname);
         name
