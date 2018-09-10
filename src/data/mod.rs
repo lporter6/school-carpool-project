@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct Parent {
     age: Option<u32>,
     fname: String,
@@ -12,5 +13,13 @@ impl Parent{
                 None => &blank,
             }, self.lname);
         name
+    }
+    pub fn new(age :Option<u32>, fname: String, mname: Option<String>, lname: String) -> Parent{
+        Parent {
+            age,
+            fname,
+            lname,
+            mname,
+        }
     }
 }
