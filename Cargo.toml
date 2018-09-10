@@ -1,0 +1,6 @@
+[package]
+name = "school-carpool-project"
+version = "0.1.0"
+authors = ["Logan Porter <porterlogan6@gmail.com>"]
+
+[dependencies]
