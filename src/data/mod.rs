@@ -39,19 +39,19 @@ struct Student {
 }
 
 enum Grade {
-    K,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
+    Kindergarden,
+    First,
+    Second,
+    Third,
+    Fourth,
+    Fifth,
+    Sixth,
+    Seventh,
+    Eighth,
+    Ninth,
+    Tenth,
+    Eleventh,
+    Twelveth,
 }
 
 struct Scores{
@@ -71,10 +71,14 @@ struct Category{
     weight: u8,
 }
 impl Scores{
-    years: Vec<Table>,
+    pub fn new(years: Vec<Table>) -> Scores{
+        Scores{
+            years,
+        }
+    }
 }
 impl Table {
-    pub fn new(grade: Grade, scores: Vec<ClassScore>){
+    pub fn new(grade: Grade, scores: Vec<ClassScore>) -> Table{
         Table {
             grade,
             scores,
@@ -82,7 +86,7 @@ impl Table {
     }
 }
 impl ClassScore{
-    pub fn new(class: String, categories: Vec<Category>){
+    pub fn new(class: String, categories: Vec<Category>) -> ClassScore{
         ClassScore {
             class,
             categories,
@@ -90,7 +94,7 @@ impl ClassScore{
     }
 }
 impl Category {
-    pub fn new(name: String, grades: Vec<u8>, weight: u8){
+    pub fn new(name: String, grades: Vec<u8>, weight: u8) -> Category{
         Category {
             name,
             grades,
